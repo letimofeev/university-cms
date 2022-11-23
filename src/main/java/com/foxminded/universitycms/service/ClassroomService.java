@@ -11,9 +11,9 @@ public interface ClassroomService {
 
     List<Classroom> findAll();
 
-    void update(Classroom building);
+    void update(Classroom classroom);
 
-    void save(Classroom building);
+    void save(Classroom classroom);
 
     void deleteById(int id);
 }
