@@ -3,9 +3,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/university
     username: postgres
     password: postgres
-
-
-
-  jpa:
-    hibernate:
-      ddl-auto: update
+  flyway:
+    url: jdbc:postgresql://localhost:5432/university
+    user: postgres
+    password: postgres
