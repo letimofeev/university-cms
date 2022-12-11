@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Classrooms</title>
+    <link rel="stylesheet" th:href="@{/styles/styles.css}">
+</head>
+<body>
+<h1>All Groups</h1>
+<table class="styled-table">
+    <thead>
+    <tr>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="group: ${allGroups}">
+        <td th:text="${group.name}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
