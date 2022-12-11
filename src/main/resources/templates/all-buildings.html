@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Title</title>
+    <title>Buildings</title>
     <link rel="stylesheet" th:href="@{/styles/styles.css}">
 </head>
 <body>
@@ -11,12 +11,21 @@
     <tr>
         <th>Address</th>
         <th>Name</th>
+        <th>Classrooms</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="building: ${allBuildings}">
         <td th:text="${building.address}"></td>
         <td th:text="${building.name}"></td>
+        <td>
+            <div class="dropdown">
+                <button class="dropbtn">Classrooms</button>
+                <div class="dropdown-content">
+                    <a th:each="classroom: ${building.classrooms}" th:text="${classroom.number}"></a>
+                </div>
+            </div>
+        </td>
     </tr>
     </tbody>
 </table>
