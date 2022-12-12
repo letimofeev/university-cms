@@ -47,6 +47,12 @@ a {
     cursor: pointer;
 }
 
+.table-body-row:hover,
+.table-body-row:focus {
+    background: #f2f3ff;
+    outline: none;
+}
+
 .table-body-cell,
 .table-head-cell {
     display: table-cell;
