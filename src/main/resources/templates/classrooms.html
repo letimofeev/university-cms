@@ -13,9 +13,9 @@
         </div>
     </div>
     <div class="table-body">
-        <a class="table-body-row" th:each="classroom: ${classrooms}">
+        <div class="table-body-row" th:each="classroom: ${classrooms}">
             <div class="table-body-cell" th:text="${classroom.number}"></div>
-        </a>
+        </div>
     </div>
 </div>
 </body>

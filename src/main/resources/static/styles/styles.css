@@ -44,7 +44,6 @@ a {
 .table-body-row {
     display: table-row;
     border-bottom: thin solid #dddddd;
-    cursor: pointer;
 }
 
 .table-body-row:hover,
@@ -57,11 +56,6 @@ a {
 .table-head-cell {
     display: table-cell;
     padding: 12px 15px;
-}
-
-.styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
 }
 
 .dropbtn {
