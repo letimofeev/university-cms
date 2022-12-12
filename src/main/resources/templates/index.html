@@ -2,11 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/styles/styles.css}">
 </head>
 <body>
-    <a th:href="@{/show-all-buildings}">Show all buildings</a>
-    <a th:href="@{/show-all-classrooms}">Show all classrooms</a>
-    <a th:href="@{/show-all-groups}">Show all groups</a>
+<h1>University</h1>
+<div class="dropdown">
+    <button class="dropbtn">Menu</button>
+    <div class="dropdown-content">
+        <a th:href="@{/show-all-buildings}">All buildings</a>
+        <a th:href="@{/show-all-classrooms}">All classrooms</a>
+        <a th:href="@{/show-all-groups}">All groups</a>
+        <a th:href="@{/show-all-students}">All students</a>
+    </div>
+</div>
+
 </body>
 </html>
