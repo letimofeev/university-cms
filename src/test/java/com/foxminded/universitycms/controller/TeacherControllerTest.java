@@ -1,7 +1,7 @@
 package com.foxminded.universitycms.controller;
 
-import com.foxminded.universitycms.model.Student;
-import com.foxminded.universitycms.service.StudentService;
+import com.foxminded.universitycms.model.Teacher;
+import com.foxminded.universitycms.service.TeacherService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,26 +18,25 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(StudentController.class)
-class StudentControllerTest {
+@WebMvcTest(TeacherController.class)
+class TeacherControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
     @MockBean
-    private StudentService studentService;
+    private TeacherService teacherService;
 
     @Test
-    void showAllStudents_shouldContainExpectedModel_whenGetRequest() throws Exception {
-        List<Student> students = List.of(new Student(9, new ArrayList<>()));
+    void showAllTeachers_shouldContainExpectedModel_whenGetRequest() throws Exception {
+        List<Teacher> teachers = List.of(new Teacher(new ArrayList<>()));
 
-        given(studentService.findAll()).willReturn(students);
+        given(teacherService.findAll()).willReturn(teachers);
 
-        mvc.perform(get("/show-all-students"))
+        mvc.perform(get("/show-all-teachers"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("students"))
-                .andExpect(model().attributeExists("students"))
-                .andExpect(model().attribute("students", students));
+                .andExpect(view().name("teachers"))
+                .andExpect(model().attributeExists("teachers"))
+                .andExpect(model().attribute("teachers", teachers));
     }
-
 }
