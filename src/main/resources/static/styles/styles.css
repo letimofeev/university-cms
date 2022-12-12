@@ -3,18 +3,9 @@ h1 {
     font-family: sans-serif;
 }
 
-a:link {
-    text-decoration: none;
-}
-
-a:visited {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
+a:link,
+a:visited,
+a:hover,
 a:active {
     text-decoration: none;
 }
@@ -35,11 +26,10 @@ a {
 
 .table-head {
     display: table-header-group;
-    vertical-align: middle;
 }
 
 .table-head-row {
-    display: table-cell;
+    display: table-row;
     text-align: left;
     background-color: #009879;
     font-weight: bold;
@@ -61,38 +51,6 @@ a {
 .table-head-cell {
     display: table-cell;
     padding: 12px 15px;
-}
-
-.styled-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.styled-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-}
-
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-
-.styled-table tbody tr {
-    border-bottom: thin solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
 }
 
 .styled-table tbody tr.active-row {

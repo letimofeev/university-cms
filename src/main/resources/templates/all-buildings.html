@@ -6,28 +6,22 @@
 </head>
 <body>
 <h1>All Buildings</h1>
-<table class="styled-table">
-    <thead>
-    <tr>
-        <th>Address</th>
-        <th>Name</th>
-        <th>Classrooms</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="building: ${allBuildings}">
-        <td th:text="${building.address}"></td>
-        <td th:text="${building.name}"></td>
-        <td>
-            <div class="dropdown">
-                <button class="dropbtn">Classrooms</button>
-                <div class="dropdown-content">
-                    <a th:each="classroom: ${building.classrooms}" th:text="${classroom.number}"></a>
-                </div>
-            </div>
-        </td>
-    </tr>
-    </tbody>
-</table>
+<div class="table">
+    <div class="table-head">
+        <div class="table-head-row">
+            <div class="table-head-cell">Address</div>
+            <div class="table-head-cell">Name</div>
+        </div>
+    </div>
+    <div class="table-body">
+        <a class="table-body-row"
+           th:each="building: ${allBuildings}"
+           th:href="@{|/show-building?id=${building.id}|}"
+        >
+            <div class="table-body-cell" th:text="${building.address}"></div>
+            <div class="table-body-cell" th:text="${building.name}"></div>
+        </a>
+    </div>
+</div>
 </body>
 </html>

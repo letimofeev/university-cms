@@ -6,17 +6,17 @@
 </head>
 <body>
 <h1>All Classrooms</h1>
-<table class="styled-table">
-    <thead>
-    <tr>
-        <th>Number</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="classroom: ${allClassrooms}">
-        <td th:text="${classroom.number}"></td>
-    </tr>
-    </tbody>
-</table>
+<div class="table">
+    <div class="table-head">
+        <div class="table-head-row">
+            <div class="table-head-cell">Number</div>
+        </div>
+    </div>
+    <div class="table-body">
+        <a class="table-body-row" th:each="classroom: ${allClassrooms}">
+            <div class="table-body-cell" th:text="${classroom.number}"></div>
+        </a>
+    </div>
+</div>
 </body>
 </html>
