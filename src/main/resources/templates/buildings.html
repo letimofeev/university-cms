@@ -5,7 +5,7 @@
     <link rel="stylesheet" th:href="@{/styles/styles.css}">
 </head>
 <body>
-<h1>All Buildings</h1>
+<h1>Buildings</h1>
 <div class="table">
     <div class="table-head">
         <div class="table-head-row">
@@ -15,7 +15,7 @@
     </div>
     <div class="table-body">
         <a class="table-body-row"
-           th:each="building: ${allBuildings}"
+           th:each="building: ${buildings}"
            th:href="@{|/show-building?id=${building.id}|}"
         >
             <div class="table-body-cell" th:text="${building.address}"></div>

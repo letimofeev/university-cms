@@ -20,7 +20,7 @@ public class BuildingController {
     @RequestMapping("/show-all-buildings")
     public String showAllBuildings(Model model) {
         List<Building> buildings = buildingService.findAll();
-        model.addAttribute("allBuildings", buildings);
-        return "all-buildings";
+        model.addAttribute("buildings", buildings);
+        return "buildings";
     }
 }

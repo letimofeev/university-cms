@@ -20,7 +20,7 @@ public class ClassroomController {
     @GetMapping("/show-all-classrooms")
     public String showAllClassrooms(Model model) {
         List<Classroom> classrooms = classroomService.findAll();
-        model.addAttribute("allClassrooms", classrooms);
-        return "all-classrooms";
+        model.addAttribute("classrooms", classrooms);
+        return "classrooms";
     }
 }

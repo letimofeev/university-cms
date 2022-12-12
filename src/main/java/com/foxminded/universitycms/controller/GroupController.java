@@ -20,7 +20,7 @@ public class GroupController {
     @GetMapping("/show-all-groups")
     public String showAllGroups(Model model) {
         List<Group> groups = groupService.findAll();
-        model.addAttribute("allGroups", groups);
-        return "all-groups";
+        model.addAttribute("groups", groups);
+        return "groups";
     }
 }
