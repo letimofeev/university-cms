@@ -1,8 +1,7 @@
 package com.foxminded.universitycms.controller;
 
-import com.foxminded.universitycms.model.Building;
 import com.foxminded.universitycms.model.Classroom;
-import com.foxminded.universitycms.service.BuildingService;
+import com.foxminded.universitycms.service.ClassroomService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,25 +17,25 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(BuildingController.class)
-class BuildingControllerTest {
+@WebMvcTest(ClassroomController.class)
+class ClassroomControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
     @MockBean
-    private BuildingService buildingService;
+    private ClassroomService classroomService;
 
     @Test
-    void showAllBuildings_shouldContainExpectedModel_whenGetRequest() throws Exception {
-        List<Building> buildings = List.of(new Building(1, "One", List.of(new Classroom()), "Address1"));
+    void showAllClassrooms_shouldContainExpectedModel_whenGetRequest() throws Exception {
+        List<Classroom> classrooms = List.of(new Classroom(1, 200), new Classroom(4, 300));
 
-        given(buildingService.findAll()).willReturn(buildings);
+        given(classroomService.findAll()).willReturn(classrooms);
 
-        mvc.perform(get("/show-all-buildings"))
+        mvc.perform(get("/show-all-classrooms"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("buildings"))
-                .andExpect(model().attributeExists("buildings"))
-                .andExpect(model().attribute("buildings", buildings));
+                .andExpect(view().name("classrooms"))
+                .andExpect(model().attributeExists("classrooms"))
+                .andExpect(model().attribute("classrooms", classrooms));
     }
 }
