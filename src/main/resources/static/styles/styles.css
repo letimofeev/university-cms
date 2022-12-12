@@ -3,6 +3,66 @@ h1 {
     font-family: sans-serif;
 }
 
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+.table {
+    display: table;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table-head {
+    display: table-header-group;
+    vertical-align: middle;
+}
+
+.table-head-row {
+    display: table-cell;
+    text-align: left;
+    background-color: #009879;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.table-body {
+    display: table-row-group;
+    vertical-align: middle;
+}
+
+.table-body-row {
+    display: table-row;
+    border-bottom: thin solid #dddddd;
+    cursor: pointer;
+}
+
+.table-body-cell,
+.table-head-cell {
+    display: table-cell;
+    padding: 12px 15px;
+}
+
 .styled-table {
     border-collapse: collapse;
     margin: 25px 0;
