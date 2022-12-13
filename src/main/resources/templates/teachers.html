@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teachers</title>
+    <link rel="stylesheet" th:href="@{/styles/styles.css}">
+</head>
+<body>
+<h1>Teachers</h1>
+<div class="table">
+    <div class="table-head">
+        <div class="table-head-row">
+            <div class="table-head-cell">First name</div>
+            <div class="table-head-cell">Last name</div>
+        </div>
+    </div>
+    <div class="table-body">
+        <a class="table-body-row"
+           th:each="teacher: ${teachers}"
+           th:href="@{|/show-teacher?id=${teacher.id}|}"
+        >
+            <div class="table-body-cell" th:text="${teacher.firstName}"></div>
+            <div class="table-body-cell" th:text="${teacher.lastName}"></div>
+        </a>
+    </div>
+</div>
+</body>
+</html>

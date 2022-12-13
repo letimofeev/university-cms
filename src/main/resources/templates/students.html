@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+    <link rel="stylesheet" th:href="@{/styles/styles.css}">
+</head>
+<body>
+<h1>Students</h1>
+<div class="table">
+    <div class="table-head">
+        <div class="table-head-row">
+            <div class="table-head-cell">First name</div>
+            <div class="table-head-cell">Last name</div>
+            <div class="table-head-cell">Average grade</div>
+        </div>
+    </div>
+    <div class="table-body">
+        <a class="table-body-row"
+           th:each="student: ${students}"
+           th:href="@{|/show-student?id=${student.id}|}"
+        >
+            <div class="table-body-cell" th:text="${student.firstName}"></div>
+            <div class="table-body-cell" th:text="${student.lastName}"></div>
+            <div class="table-body-cell" th:text="${student.averageGrade}"></div>
+        </a>
+    </div>
+</div>
+</body>
+</html>

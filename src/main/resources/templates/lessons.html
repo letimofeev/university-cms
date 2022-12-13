@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lessons</title>
+    <link rel="stylesheet" th:href="@{/styles/styles.css}">
+</head>
+<body>
+<h1>Lessons</h1>
+<div class="table">
+    <div class="table-head">
+        <div class="table-head-row">
+            <div class="table-head-cell">Day of week</div>
+            <div class="table-head-cell">Time</div>
+            <div class="table-head-cell">Subject</div>
+            <div class="table-head-cell">Group</div>
+            <div class="table-head-cell">Teacher</div>
+            <div class="table-head-cell">Classroom</div>
+        </div>
+    </div>
+    <div class="table-body">
+        <div class="table-body-row" th:each="lesson: ${lessons}">
+            <div class="table-body-cell" th:text="${lesson.dayOfWeek}"></div>
+            <div class="table-body-cell" th:text="${lesson.startTime.toString().substring(0, 5)} + ' - ' + ${lesson.endTime.toString().substring(0, 5)}"></div>
+            <div class="table-body-cell" th:text="${lesson.subject.name}"></div>
+            <div class="table-body-cell" th:text="${lesson.group.name}"></div>
+            <div class="table-body-cell" th:text="${lesson.teacher.firstName} + ' ' + ${lesson.teacher.lastName}"></div>
+            <div class="table-body-cell" th:text="${lesson.classroom.number}"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

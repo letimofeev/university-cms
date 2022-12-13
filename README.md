@@ -12,8 +12,7 @@
 
 Given user is logged on as Student
 
-- User can select `My Education` menu
-- From the dropdown menu, user can choose `My Schedule` menu
+- User can see and navigate to `My Schedule` menu
 - User should see own Student schedule according to selected date/range filter
 
 
